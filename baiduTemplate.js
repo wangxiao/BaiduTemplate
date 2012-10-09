@@ -1,5 +1,5 @@
 /**
- * baiduTemplate简单好用的Javascript模板引擎 1.0.5 版本
+ * baiduTemplate简单好用的Javascript模板引擎 1.0.6 版本
  * http://baidufe.github.com/BaiduTemplate
  * 开源协议：BSD License
  * 浏览器环境占用命名空间 baidu.template ，nodejs环境直接安装 npm install baidutemplate
@@ -155,18 +155,11 @@
 
         str = str 
             //定义变量，如果没有分号，需要容错  <%var val='test'%>
-            .replace(new RegExp("("+_left+"[\\s]*?var[\\s]*?.*?[\\s]*?[^;])[\\s]*?"+_right,"g"),"$1;"+_right_);
-
-        console.log('1:'+str);
-
-        str = str 
+            .replace(new RegExp("("+_left+"[\\s]*?var[\\s]*?.*?[\\s]*?[^;])[\\s]*?"+_right,"g"),"$1;"+_right_)
 
             //对变量后面的分号做容错(包括转义模式 如<%:h=value%>)  <%=value;%> 排除掉函数的情况 <%fun1();%> 排除定义变量情况  <%var val='test';%>
-            .replace(new RegExp("("+_left+":?[hvu]?[\\s]*?=[\\s]*?[^;|"+_right+"]*?);[\\s]*?"+_right,"g"),"$1"+_right_);
+            .replace(new RegExp("("+_left+":?[hvu]?[\\s]*?=[\\s]*?[^;|"+_right+"]*?);[\\s]*?"+_right,"g"),"$1"+_right_)
 
-        console.log('0:'+str);
-
-        str = str 
             //按照 <% 分割为一个个数组，再用 \t 和在一起，相当于将 <% 替换为 \t
             //将模板按照<%分为一段一段的，再在每段的结尾加入 \t,即用 \t 将每个模板片段前面分隔开
             .split(_left_).join("\t");
@@ -185,8 +178,6 @@
                 //默认不转义HTML转义
                 .replace(new RegExp("\\t=(.*?)"+_right,"g"),"',typeof($1) === 'undefined'?'':$1,'");
         };
-
-        console.log('2:'+str);
 
         str = str
 
