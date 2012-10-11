@@ -1,8 +1,9 @@
 百度JS模板引擎 baiduTemplate 1.0.6 版
 ==========================
 
+### ==========================
 
-##文档请参考官网
+##文档请查看官网
 
 <a style="font-size:14px;" href="http://baidufe.github.com/BaiduTemplate/">http://baidufe.github.com/BaiduTemplate/</a>
 
