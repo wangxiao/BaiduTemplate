@@ -3,12 +3,12 @@
 
 ### ==========================
 
-##文档请查看官网
+###文档请查看官网
 
-<a style="font-size:14px;" href="http://baidufe.github.com/BaiduTemplate/">http://baidufe.github.com/BaiduTemplate/</a>
+<a href="http://baidufe.github.com/BaiduTemplate/">http://baidufe.github.com/BaiduTemplate/</a>
 
 
-##change log
+###change log
 
 ###1.0.6：
 	修改定义变量的bug
