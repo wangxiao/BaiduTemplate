@@ -3,7 +3,7 @@
 
 ##文档请参考官网
 
-	<a href="http://baidufe.github.com/BaiduTemplate/">http://baidufe.github.com/BaiduTemplate/</a>
+<a href="http://baidufe.github.com/BaiduTemplate/">http://baidufe.github.com/BaiduTemplate/</a>
 
 ##change log
 
