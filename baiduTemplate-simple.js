@@ -66,8 +66,8 @@ bt.versions.push('simple 1.0.6');
 bt.cache = {};
 
 //自定义分隔符，可以含有正则中的字符，可以是HTML注释开头 <! !>
-bt.LEFT_DELIMITER = bt.LEFT_DELIMITER||'<%';
-bt.RIGHT_DELIMITER = bt.RIGHT_DELIMITER||'%>';
+bt.LEFT_DELIMITER = bt.LEFT_DELIMITER || '<%';
+bt.RIGHT_DELIMITER = bt.RIGHT_DELIMITER || '%>';
 
 //转义影响正则的字符
 bt._encodeReg = function (source) {
@@ -138,6 +138,9 @@ bt._analysisStr = function(str){
         //按照 <% 分割为一个个数组，再用 \t 和在一起，相当于将 <% 替换为 \t
         //将模板按照<%分为一段一段的，再在每段的结尾加入 \t,即用 \t 将每个模板片段前面分隔开
         .split(_left_).join("\t")
+            
+        //默认不转义HTML转义
+        .replace(new RegExp("\\t=(.*?)"+_right,"g"),"',typeof($1) === 'undefined'?'':$1,'")
 
         //支持不转义写法 <%:=value%>和<%-value%>
         .replace(new RegExp("\\t(?::=|-)(.*?)"+_right,"g"),"',typeof($1)==='undefined'?'':$1,'")
