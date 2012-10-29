@@ -59,6 +59,10 @@
     //取得命名空间 baidu.template
     bt = baidu.template;
 
+    //标记当前版本
+    bt.versions = bt.versions || [];
+    bt.versions.push('1.0.6');
+
     //缓存  将对应id模板生成的函数缓存下来。
     bt.cache = {};
     
