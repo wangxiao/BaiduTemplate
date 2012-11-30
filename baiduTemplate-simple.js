@@ -56,7 +56,7 @@ baidu.template = function(str, data){
 };
 
 //取得命名空间 baidu.template
-bt = baidu.template;
+var bt = baidu.template;
 
 //标记当前版本
 bt.versions = bt.versions || [];
