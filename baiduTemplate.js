@@ -1,5 +1,5 @@
 /**
- * baiduTemplate简单好用的Javascript模板引擎 1.0.6 版本
+ * baiduTemplate简单好用的Javascript模板引擎 1.0.7 版本
  * http://baidufe.github.com/BaiduTemplate
  * 开源协议：BSD License
  * 浏览器环境占用命名空间 baidu.template ，nodejs环境直接安装 npm install baidutemplate
@@ -61,7 +61,7 @@
 
     //标记当前版本
     bt.versions = bt.versions || [];
-    bt.versions.push('1.0.6');
+    bt.versions.push('1.0.7');
 
     //缓存  将对应id模板生成的函数缓存下来。
     bt.cache = {};
@@ -105,7 +105,7 @@
 
     //将字符串拼接生成函数，即编译过程(compile)
     bt._compile = function(str){
-        var funBody = "var _template_fun_array=[];\nvar fn=(function(data){\nvar _template_varName='';\nfor(name in data){\n_template_varName+=('var '+name+'=data[\"'+name+'\"];');\n};\neval(_template_varName);\n_template_fun_array.push('"+bt._analysisStr(str)+"');\n_template_varName=null;\n})(_template_object);\nfn = null;\nreturn _template_fun_array.join('');\n";
+        var funBody = "var _template_fun_array=[];\nvar fn=(function(__data){\nvar _template_varName='';\nfor(name in __data){\n_template_varName+=('var '+name+'=__data[\"'+name+'\"];');\n};\neval(_template_varName);\n_template_fun_array.push('"+bt._analysisStr(str)+"');\n_template_varName=null;\n})(_template_object);\nfn = null;\nreturn _template_fun_array.join('');\n";
         return new Function("_template_object",funBody);
     };
 

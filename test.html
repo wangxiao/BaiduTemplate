@@ -83,6 +83,10 @@ varTest1:  <%=varTest1;%>
 <%var varTest2 = value2;%>
 varTest2:  <%=varTest2%>
 <br>
+
+19、test：
+<%=testdata.a%><br>
+<%=testdata.b%><br>
 </script>
 <!-- 测试模板1结束 -->
 
@@ -92,6 +96,7 @@ varTest2:  <%=varTest2%>
 	window.onload=function(){
 		//测试数据，对应每个用例
 		var data={
+			testdata:{a:123,b:456},
 			value1:'<span style="color:red;">http://wangxiao.github.com/BaiduTemplate/</span>',
 			value2:'<span style="color:red;">http://wangxiao.github.com/BaiduTemplate/</span>',
 			value3:'<span style="color:red;">http://wangxiao.github.com/BaiduTemplate/</span>',
