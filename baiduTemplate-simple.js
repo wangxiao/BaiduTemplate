@@ -76,7 +76,7 @@ bt._encodeReg = function (source) {
 
 //将字符串拼接生成函数，即编译过程(compile)
 bt._compile = function(str){
-    var funBody = "var _template_fun_array=[];\nvar fn=(function(__data){\nvar _template_varName='';\nfor(name in __data){\n_template_varName+=('var '+name+'=__data[\"'+name+'\"];');\n};\neval(_template_varName);\n_template_fun_array.push('"+bt._analysisStr(str)+"');\n_template_varName=null;\n})(_template_object);\nfn = null;\nreturn _template_fun_array.join('');\n";
+    var funBody = "var _template_fun_array=[];\nvar fn=(function(__data__){\nvar _template_varName='';\nfor(name in __data__){\n_template_varName+=('var '+name+'=__data__[\"'+name+'\"];');\n};\neval(_template_varName);\n_template_fun_array.push('"+bt._analysisStr(str)+"');\n_template_varName=null;\n})(_template_object);\nfn = null;\nreturn _template_fun_array.join('');\n";
     return new Function("_template_object",funBody);
 };
 
