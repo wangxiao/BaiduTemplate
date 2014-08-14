@@ -86,7 +86,7 @@
 
     //转义影响正则的字符
     bt._encodeReg = function (source) {
-        return String(source).replace(/([.*+?^=!:${}()|[\]/\\])/g,'\\$1');
+        return String(source).replace(/([.*+?^=!:${}()|[\]\/\\])/g,'\\$1');
     };
 
     //转义UI UI变量使用在HTML页面标签onclick等事件函数参数中
